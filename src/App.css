@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-.map { height: 180px; }
+#map { height: 180px; background-color: #61dafb}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
