@@ -21,6 +21,11 @@ function App() {
                 A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
         </Marker>
+        <Marker position={[53.900, 27.530]}>
+            <Popup>
+                A pretty CS popup. <br /> Easily customizable.
+            </Popup>
+        </Marker>
     </MapContainer>
 
 
