@@ -23,7 +23,9 @@ export const buttons:Array<ButtonObjType> = [
     {id: 1, wasteTitle: "пластик", isActive: true},
     {id: 2, wasteTitle: "бумага", isActive: false},
     {id: 3, wasteTitle: "стекло", isActive: true},
-
+    {id: 4, wasteTitle: "крупногабаритные отходы", isActive: true},
+    {id: 5, wasteTitle: "опасные отходы", isActive: true},
+    {id: 6, wasteTitle: "металл", isActive: false},
 ]
 
 //

@@ -9,7 +9,7 @@ import {Button} from "./Button";
 
 // export type filterType = "all" | "plastic" | "paper" | "glass"
 
-export type filterType = "все" | "пластик" | "бумага" | "стекло"
+export type filterType = "все" | "пластик" | "бумага" | "стекло" | "крупногабаритные отходы" | "опасные отходы" | "металл"
 
 function App() {
     const [filtersArray, setFilterArray] = useState<Array<filterType>>([])
@@ -114,12 +114,15 @@ function App() {
         <Button title={buttons[0].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[0].isActive}/><br/>
         <Button title={buttons[1].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[1].isActive}/><br/>
         <Button title={buttons[2].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[2].isActive}/><br/>
+        <Button title={buttons[3].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[3].isActive}/><br/>
+        <Button title={buttons[4].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[4].isActive}/><br/>
+        <Button title={buttons[5].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[5].isActive}/><br/>
 
-        <button onClick={()=>onClickHandler("все")}>Все точки</button>
-        <button style={{background: "green"}} onClick={()=>onClickHandler("пластик")}>Пластик</button>
+        {/*<button onClick={()=>onClickHandler("все")}>Все точки</button>*/}
+        {/*<button style={{background: "green"}} onClick={()=>onClickHandler("пластик")}>Пластик</button>*/}
 
-        <button onClick={()=>onClickHandler("бумага")}>Бумага</button>
-        <button onClick={()=>onClickHandler("стекло")}>Стекло</button>
+        {/*<button onClick={()=>onClickHandler("бумага")}>Бумага</button>*/}
+        {/*<button onClick={()=>onClickHandler("стекло")}>Стекло</button>*/}
     <MapContainer center={[53.884, 27.523]} zoom={11.5} scrollWheelZoom={true}
                   style={{ width: "100%", height: "100vh" }}>
         <TileLayer
