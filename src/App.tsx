@@ -3,30 +3,67 @@ import React, {useState} from 'react';
 // import from './App.css';
 
 import {MapContainer, Marker, Popup, TileLayer, useMap} from 'react-leaflet'
-import {markers, waste} from "./state/state";
+import {buttons, markers, waste} from "./state/state";
 import {Button} from "./Button";
 
 
-export type filterType = "all" | "plastic" | "paper" | "glass"
+// export type filterType = "all" | "plastic" | "paper" | "glass"
 
-
-
+export type filterType = "все" | "пластик" | "бумага" | "стекло"
 
 function App() {
     const [filtersArray, setFilterArray] = useState<Array<filterType>>([])
     console.log(filtersArray)
 
-    const setActiveFilter=()=>{
+    const setActiveFilter=(wasteType:filterType)=>{
 
-        setFilterArray([...filtersArray,title])
-
+        buttons.map(b=>b.wasteTitle===wasteType?b.isActive=!b.isActive:b)
+        setFilterArray([...filtersArray])
+        //
+        // if(!filtersArray.includes(wasteType)) {
+        //
+        //     setFilterArray([...filtersArray,wasteType])
+        // }
 
     }
+
+
+
+
     let filteredMarkers = markers;
+
+    if(buttons[0].isActive) {
+
+        filteredMarkers.map(m=>m.wasteType==="пластик"?m.display=true:m)
+
+    }  else {
+        filteredMarkers.map(m=>m.wasteType==="пластик"?m.display=false:m)
+    }
+
+    if(buttons[1].isActive) {
+
+        filteredMarkers.map(m=>m.wasteType==="бумага"?m.display=true:m)
+
+    }
+
+    else {
+        filteredMarkers.map(m=>m.wasteType==="бумага"?m.display=false:m)
+    }
+
+    if(buttons[2].isActive) {
+
+        filteredMarkers.map(m=>m.wasteType==="стекло"?m.display=true:m)
+
+    }
+
+    else {
+        filteredMarkers.map(m=>m.wasteType==="стекло"?m.display=false:m)
+    }
+
 
     const onClickHandler = (filter:filterType) => {
 
-        if(filter==="all") {
+        if(filter==="все") {
             filteredMarkers.map(m=>m.display=true)
               setFilterArray([])
         }
@@ -51,35 +88,38 @@ function App() {
     }
 
 
-
-    if(filtersArray.length===0) {
-        // filteredMarkers.map(m=>m.display=true)
-    }
-    else if (filtersArray.includes("plastic")) {
-        filteredMarkers = markers.filter(m=>m.wasteType===waste[0])
-        filteredMarkers.map(m=>m.display=true)
-    }
-        else if (filtersArray.includes("paper")) {
-        filteredMarkers = markers.filter(m=>m.wasteType===waste[1]);
-        filteredMarkers.map(m=>m.display=true)
-    }
-        else if (filtersArray.includes("glass")) {
-        filteredMarkers = markers.filter(m=>m.wasteType===waste[2]);
-        filteredMarkers.map(m=>m.display=true)
-    }
+    //
+    // if(filtersArray.length===0) {
+    //     // filteredMarkers.map(m=>m.display=true)
+    // }
+    // else if (filtersArray.includes("пластик")) {
+    //     filteredMarkers = markers.filter(m=>m.wasteType===waste[0])
+    //     filteredMarkers.map(m=>m.display=true)
+    // }
+    //     else if (filtersArray.includes("бумага")) {
+    //     filteredMarkers = markers.filter(m=>m.wasteType===waste[1]);
+    //     filteredMarkers.map(m=>m.display=true)
+    // }
+    //     else if (filtersArray.includes("стекло")) {
+    //     filteredMarkers = markers.filter(m=>m.wasteType===waste[2]);
+    //     filteredMarkers.map(m=>m.display=true)
+    // }
 
 
 
   return (
 
 
-    <div> <Button title={"Бумага"} setActiveFilter={setActiveFilter} isActive={false}/><br/>
+    <div>
+        <Button title={buttons[0].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[0].isActive}/><br/>
+        <Button title={buttons[1].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[1].isActive}/><br/>
+        <Button title={buttons[2].wasteTitle} setActiveFilter={setActiveFilter} isActive={buttons[2].isActive}/><br/>
 
-        <button onClick={()=>onClickHandler("all")}>Все точки</button>
-        <button style={{background: "green"}} onClick={()=>onClickHandler("plastic")}>Пластик</button>
+        <button onClick={()=>onClickHandler("все")}>Все точки</button>
+        <button style={{background: "green"}} onClick={()=>onClickHandler("пластик")}>Пластик</button>
 
-        <button onClick={()=>onClickHandler("paper")}>Бумага</button>
-        <button onClick={()=>onClickHandler("glass")}>Стекло</button>
+        <button onClick={()=>onClickHandler("бумага")}>Бумага</button>
+        <button onClick={()=>onClickHandler("стекло")}>Стекло</button>
     <MapContainer center={[53.884, 27.523]} zoom={11.5} scrollWheelZoom={true}
                   style={{ width: "100%", height: "100vh" }}>
         <TileLayer

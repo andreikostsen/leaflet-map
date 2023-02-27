@@ -1,3 +1,4 @@
+import {filterType} from "../App";
 
 export const waste = ["пластик", "бумага", "стекло", "крупногабаритные отходы", "опасные отходы", "металл"]
 
@@ -11,9 +12,16 @@ export const markers = [
 ]
 
 
-const buttons = [
-    {id: 1, wasteTitle: "пластик", isActive: false},
-    {id: 2, wasteTitle: "бумага", isActive: true},
+type ButtonObjType = {
+    id: number,
+    wasteTitle: filterType,
+    isActive: boolean
+}
+
+
+export const buttons:Array<ButtonObjType> = [
+    {id: 1, wasteTitle: "пластик", isActive: true},
+    {id: 2, wasteTitle: "бумага", isActive: false},
     {id: 3, wasteTitle: "стекло", isActive: true},
 
 ]
@@ -30,6 +38,7 @@ const buttons = [
 // Вариант 2
 //
 // есть массив объектов с кнопками, в нем у кнопок есть статус isActive
-// фильтруя такой массив мы оставляем только кнопки со статусом isActive=true
+// взависимости от статуса isActive  выбираем стиль CSS кнопки
+//при нажатии на кнопку меняется статус isActive
 //
-// фильтруя массив точек по статусу кнопок, мы вытаскиваем в новый массив нужные нам точки и отрисовываем их
+// фильтруя массив точек по статусу кнопок isActive=true, мы вытаскиваем в новый массив нужные нам точки и отрисовываем их

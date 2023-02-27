@@ -1,17 +1,17 @@
 import {filterType} from "./App";
 
 type PropsType = {
-    title: string,
-    setActiveFilter: ()=>void,
+    title: filterType,
+    setActiveFilter: (wasteType:filterType)=>void,
     isActive:boolean,
 }
 
-export const Button = (props: PropsType) => {
+export const Button = (props:PropsType) => {
 
-    let title = props.title
+    let wasteType:filterType = props.title
 
     const onClickHandler=()=>{
-        props.setActiveFilter()
+        props.setActiveFilter(wasteType)
     }
 
     return (
