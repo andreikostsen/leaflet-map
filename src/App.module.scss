@@ -1,0 +1,30 @@
+
+.map {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.mapWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  //padding: 20px;
+  //background: $color-bright;
+  //@media screen and (min-width: 1200px) {
+  //  padding: 38px 135px 55px;
+  //}
+}
+
+.mapHeading {
+  margin: 0 0 34px;
+}
+
+.buttonsWrapper {
+  width: 800px;
+  padding: 20px 0px;
+}
+
+.mapContainer {
+  width: 1170px;
+  height: 543px;
+}
