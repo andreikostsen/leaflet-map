@@ -1,16 +1,34 @@
 {
   "files": {
-    "main.css": "/leaflet-map/static/css/main.81b28644.css",
-    "main.js": "/leaflet-map/static/js/main.fcd89b77.js",
+    "main.css": "/leaflet-map/static/css/main.760d7d1d.css",
+    "main.js": "/leaflet-map/static/js/main.76c4d3aa.js",
     "static/js/787.b5a584c5.chunk.js": "/leaflet-map/static/js/787.b5a584c5.chunk.js",
+    "static/media/RisingSun-Medium.ttf": "/leaflet-map/static/media/RisingSun-Medium.de6a93f1269455169607.ttf",
+    "static/media/RisingSun-MediumItalic.ttf": "/leaflet-map/static/media/RisingSun-MediumItalic.7291554e1995923d16e1.ttf",
+    "static/media/RisingSun-DemiBold.woff": "/leaflet-map/static/media/RisingSun-DemiBold.1173c18c57d7aede7bd7.woff",
+    "static/media/RisingSun-Bold.woff": "/leaflet-map/static/media/RisingSun-Bold.16433c64efb2b7de9b48.woff",
+    "static/media/RisingSun-Light.woff": "/leaflet-map/static/media/RisingSun-Light.4fb1c1d59ca36e847c49.woff",
+    "static/media/RisingSun-Regular.woff": "/leaflet-map/static/media/RisingSun-Regular.b7f8501588ce9ff8eeed.woff",
+    "static/media/RisingSun-Heavy.woff": "/leaflet-map/static/media/RisingSun-Heavy.331e98d208f15dcc3236.woff",
+    "static/media/RisingSun-DemiBoldItalic.woff": "/leaflet-map/static/media/RisingSun-DemiBoldItalic.f947660cef518d487567.woff",
+    "static/media/RisingSun-LightItalic.woff": "/leaflet-map/static/media/RisingSun-LightItalic.3c142fd6512673a92843.woff",
+    "static/media/RisingSun-Italic.woff": "/leaflet-map/static/media/RisingSun-Italic.c2b7d65507acff9560b2.woff",
+    "static/media/RisingSun-Black.woff": "/leaflet-map/static/media/RisingSun-Black.9f0d4c091f94feb7d449.woff",
+    "static/media/RisingSun-BoldItalic.woff": "/leaflet-map/static/media/RisingSun-BoldItalic.83f0d05949a4aab9cf64.woff",
+    "static/media/RisingSun-HeavyItalic.woff": "/leaflet-map/static/media/RisingSun-HeavyItalic.1d0a7b1102a87041bc5c.woff",
+    "static/media/RisingSun-BlackItalic.woff": "/leaflet-map/static/media/RisingSun-BlackItalic.a481cfeab0a4aacb8d4c.woff",
+    "static/media/u_phone_24.svg": "/leaflet-map/static/media/u_phone_24.ef91ab8d171053e3f4c9.svg",
     "static/media/point_icon.svg": "/leaflet-map/static/media/point_icon.19bdea4f08f5604007f9977528c3b9cf.svg",
+    "static/media/u_location-point_24.svg": "/leaflet-map/static/media/u_location-point_24.75de04a3793c9d638828.svg",
+    "static/media/u_clock-three_24.svg": "/leaflet-map/static/media/u_clock-three_24.d35cceeb44ab08604e51.svg",
+    "static/media/u_link_24.svg": "/leaflet-map/static/media/u_link_24.4ca5748954249bffdb19.svg",
     "index.html": "/leaflet-map/index.html",
-    "main.81b28644.css.map": "/leaflet-map/static/css/main.81b28644.css.map",
-    "main.fcd89b77.js.map": "/leaflet-map/static/js/main.fcd89b77.js.map",
+    "main.760d7d1d.css.map": "/leaflet-map/static/css/main.760d7d1d.css.map",
+    "main.76c4d3aa.js.map": "/leaflet-map/static/js/main.76c4d3aa.js.map",
     "787.b5a584c5.chunk.js.map": "/leaflet-map/static/js/787.b5a584c5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.81b28644.css",
-    "static/js/main.fcd89b77.js"
+    "static/css/main.760d7d1d.css",
+    "static/js/main.76c4d3aa.js"
   ]
 }
