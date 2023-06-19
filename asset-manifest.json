@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/leaflet-map/static/css/main.760d7d1d.css",
-    "main.js": "/leaflet-map/static/js/main.76c4d3aa.js",
+    "main.css": "/leaflet-map/static/css/main.520f32dc.css",
+    "main.js": "/leaflet-map/static/js/main.a5874d92.js",
     "static/js/787.b5a584c5.chunk.js": "/leaflet-map/static/js/787.b5a584c5.chunk.js",
     "static/media/RisingSun-Medium.ttf": "/leaflet-map/static/media/RisingSun-Medium.de6a93f1269455169607.ttf",
     "static/media/RisingSun-MediumItalic.ttf": "/leaflet-map/static/media/RisingSun-MediumItalic.7291554e1995923d16e1.ttf",
@@ -23,12 +23,12 @@
     "static/media/u_clock-three_24.svg": "/leaflet-map/static/media/u_clock-three_24.d35cceeb44ab08604e51.svg",
     "static/media/u_link_24.svg": "/leaflet-map/static/media/u_link_24.4ca5748954249bffdb19.svg",
     "index.html": "/leaflet-map/index.html",
-    "main.760d7d1d.css.map": "/leaflet-map/static/css/main.760d7d1d.css.map",
-    "main.76c4d3aa.js.map": "/leaflet-map/static/js/main.76c4d3aa.js.map",
+    "main.520f32dc.css.map": "/leaflet-map/static/css/main.520f32dc.css.map",
+    "main.a5874d92.js.map": "/leaflet-map/static/js/main.a5874d92.js.map",
     "787.b5a584c5.chunk.js.map": "/leaflet-map/static/js/787.b5a584c5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.760d7d1d.css",
-    "static/js/main.76c4d3aa.js"
+    "static/css/main.520f32dc.css",
+    "static/js/main.a5874d92.js"
   ]
 }
