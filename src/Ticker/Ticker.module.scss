@@ -1,0 +1,52 @@
+$color-primary: #94B9AB;
+$color-secondary: #0C6DCE;
+$color-light: #BDD9CE;
+$color-bright: #DDC8FF;
+$color-black: #070707;
+$color-dark: #0C3626;
+$color-white: #F6FCEA;
+
+.marquee-container {
+    height: 70px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.ticker {
+    width: 100%;
+    height: 70px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    border-width: 0.5px 0px;
+    border-style: solid;
+    border-color: $color-black;
+    background-color: $color-white;
+}
+
+.text {
+    font-family: 'Rising Sun';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 70px;
+    text-transform: uppercase;
+    letter-spacing: 0em;
+    color: #000000;
+    margin-right: 20px;
+}
+
+
+@media (max-width: 600px) {
+    .ticker {
+        height: 50px;
+    }
+
+    .text {
+        font-size: 18px;
+        line-height: 50;
+    }
+}

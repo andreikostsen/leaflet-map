@@ -1,3 +1,112 @@
+$color-primary: #94B9AB;
+$color-secondary: #0C6DCE;
+$color-light: #BDD9CE;
+$color-bright: #DDC8FF;
+$color-black: #070707;
+$color-dark: #0C3626;
+$color-white: #F6FCEA;
+
+
+
+// font-family: 'Rising Sun', sans-serif;
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Rising Sun Light'), url('./fonts/RisingSun-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Rising Sun Light Italic'), url('./fonts/RisingSun-LightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rising Sun Regular'), url('./fonts/RisingSun-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Rising Sun Italic'), url('./fonts/RisingSun-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Rising Sun Medium'), url('./fonts/RisingSun-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Rising Sun Medium Italic'), url('./fonts/RisingSun-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Rising Sun DemiBold'), url('./fonts/RisingSun-DemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Rising Sun DemiBold Italic'), url('./fonts/RisingSun-DemiBoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Rising Sun Bold'), url('./fonts/RisingSun-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Rising Sun Bold Italic'), url('./fonts/RisingSun-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Rising Sun Heavy'), url('./fonts/RisingSun-Heavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Rising Sun Heavy Italic'), url('./fonts/RisingSun-HeavyItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Rising Sun Black'), url('./fonts/RisingSun-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rising Sun';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Rising Sun Black Italic'), url('./fonts/RisingSun-BlackItalic.woff') format('woff');
+}
+
 
 .map {
   max-width: 1170px;
@@ -28,3 +137,89 @@
   width: 1170px;
   height: 543px;
 }
+
+
+
+.popup {
+  width: 370px;
+}
+
+
+.popupHeader {
+  background: $color-primary;
+  padding: 27px 13px 10px 10px;
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: $color-black;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.popupAddressWrapper {
+  background: $color-white;
+  padding: 1px 1px 1px 10px;
+  margin: 0px;
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: $color-black;
+}
+
+ul.address {
+  padding: 0px 0px 0px 30px;
+}
+
+
+
+.locationPoint {
+  list-style-image: url(./u_location-point_24.svg);
+}
+.phone {
+  list-style-image:url(./u_phone_24.svg);
+}
+.schedule {
+  list-style-image:url(./u_clock-three_24.svg);
+}
+.website {
+  list-style-image:url(./u_link_24.svg);
+}
+.popupAddressContent {
+  position: relative;
+  top: -7px;
+}
+
+.popupFooter {
+  background:#CAE3F9;
+  padding: 10px 10px 5px 10px;
+  font-family: 'Rising Sun';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: $color-black;
+  border-radius: 0px 0px 20px 20px ;
+}
+
+
+ul.wasteTypes {
+  list-style-type: none;
+  font-family: 'c';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-black;
+  padding: 0px;
+  margin: 5px 0px;
+}
+
+ul.wasteTypes li::first-letter {
+  text-transform: capitalize;
+}
+
+
