@@ -1,6 +1,19 @@
 {
 "markers":[
   {"id": 1, "title": "point1", "latitude": 53.884, "longitude": 27.600, "info": "Some info about point 1"},
-  {"id": 2, "title": "point2", "latitude": 53.9024716, "longitude": 27.5618225, "info": "Some info about point 2"}
+  {"id": 2, "title": "point2", "latitude": 53.9024716, "longitude": 27.5618225, "info": "Some info about point 2"},
+  {
+    "id": 1,
+    "title": "Пункт №29 ОАО \"Белвторресурсы\"",
+    "website": "https://belvtorresurs.by/",
+    "address": "г.Минск, ул.Челюскинцев, 30",
+    "schedule": "Время работы: Пн-Пт: с 09:00 до 18:00 (обед 14:00-15:00) вых: Суббота, Воскресенье",
+    "phone": "",
+    "latitude": 53.871875,
+    "longitude": 27.647768,
+    "info": "",
+    "wasteTypes": ["пластик", "бумага", "стекло", "крупногабаритные отходы", "опасные отходы", "металл"],
+    "display": false
+  }
 ]
 }

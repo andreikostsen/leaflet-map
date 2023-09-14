@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import L from 'leaflet';
 import {MapContainer, Marker, Popup, TileLayer} from 'react-leaflet'
 import MarkerClusterGroup from "react-leaflet-cluster";
@@ -7,26 +7,142 @@ import {Button} from "./Button";
 import s from './App.module.scss';
 import pointIcon from './point_icon.svg';
 import axios, {AxiosError} from 'axios';
+import markersJson from './state/markers.json'
+import {applyMiddleware, combineReducers, createStore, Dispatch} from "redux";
+import thunk, {ThunkAction, ThunkDispatch} from "redux-thunk";
+import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 
 // export type filterType = "all" | "plastic" | "paper" | "glass"
 
 export type filterType =
-    "все"
-    | "пластик"
-    | "бумага"
-    | "стекло"
-    | "крупногабаритные отходы"
-    | "опасные отходы"
-    | "металл"
+    'все'
+    | 'ветошь'
+    | 'пластик'
+    | 'бумага'
+    | 'стекло'
+    | 'электронная и бытовая техника'
+    | 'крупногабаритные отходы'
+    | 'опасные отходы'
+    | 'металл'
+    | 'вторая жизнь'
+
+
+
+
+// API
+const instance = axios.create({baseURL: 'https://my-json-server.typicode.com/andreikostsen/testsearch/'})
+
+const api = {
+    getMarkers() {
+        return instance.get<MarkerType[]>('markersState')
+    },
+
+}
+
+
+// Reducer
+const initState: Array<MarkerType> = []
+
+type InitStateType = typeof initState
+
+const appReducer = (state: InitStateType = initState, action: ActionsType): Array<MarkerType> => {
+    switch (action.type) {
+        case 'APP/GET-MARKERS':
+            return [...action.markers]
+        default:
+            return state
+    }
+}
+
+const getMarkersAC = (markers:Array<MarkerType>):getMarkersActionType => ({type: 'APP/GET-MARKERS', markers} as const)
+
+type getMarkersActionType = {
+    type: 'APP/GET-MARKERS',
+    markers:Array<MarkerType>
+}
+
+type ActionsType = getMarkersActionType
+
+
+
+// Thunk
+const getMarkersTC = () => (dispatch: Dispatch) => {
+    api.getMarkers()
+        .then((res) => {
+            dispatch(getMarkersAC(res.data))
+        })
+        .catch((e: AxiosError) => {
+            console.log(e)
+        })
+}
+
+
+// Store
+const rootReducer = combineReducers({
+    app: appReducer,
+})
+
+export const store = createStore(rootReducer, applyMiddleware(thunk))
+type RootState = ReturnType<typeof store.getState>
+type AppDispatch = ThunkDispatch<RootState, unknown, ActionsType>
+type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ActionsType>
+const useAppDispatch = () => useDispatch<AppDispatch>()
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
 
 function App() {
+
+    const dispatch = useAppDispatch()
+    const filteredMarkers = useAppSelector(state => state.app)
+
+
+    useEffect(() => {
+        dispatch(getMarkersTC())
+    }, [])
+
+
 
     const [buttonsStatus, setButtonsStatus] = useState<Array<ButtonObjType>>(buttons)
 
     const changeButtonStatus = (wasteType: filterType) => {
+
+        console.log(wasteType)
+        if(wasteType==="все") {
+            buttons[0].isActive = !buttons[0].isActive
+        } else  {
+            buttons[0].isActive = false
+        }
+
+
+
         buttons.map(b => b.wasteTitle === wasteType ? b.isActive = !b.isActive : b)
+
+
+
+        if(wasteType==="все" && buttons[0].isActive) {
+
+            buttons.map(b=> b.isActive = false)
+
+        } else if (wasteType==="все" && buttons[0].isActive === false) {
+
+            buttons.map(b=> b.isActive = true)
+
+        }
+
+        // if(buttons[0].isActive === true) {
+        //
+        //     buttons.map(b=> b.isActive = true)
+        //     setButtonsStatus({...buttonsStatus})
+        // } else  {
+        //     buttons.map(b=> b.isActive = false)
+        //     setButtonsStatus({...buttonsStatus})
+        //
+        // }
+        //
         setButtonsStatus({...buttonsStatus})
+
+
 
     }
 
@@ -37,37 +153,17 @@ function App() {
 
 
 
-// API
-    const instance = axios.create({baseURL: 'https://my-json-server.typicode.com/andreikostsen/testsearch/'})
-
-    const api = {
-        getMarkers() {
-            return instance.get<MarkerType[]>('markersState')
-        },
-
-    }
-
-        api.getMarkers()
-            .then((res) => {
-                console.log(typeof (res.data[1].wasteTypes))
-
-            })
-            .catch((e: AxiosError) => {
-                console.log(e)
-            })
-
-
-
-
-    let filteredMarkers = markers;
-
     filteredMarkers.map(m => m.display = false)
+
+
 
     for (let i = 0; i < buttons.length; i++) {
         if (buttons[i].isActive) {
             filteredMarkers.map(m => m.wasteTypes.includes(waste[i]) ? m.display = true : m)
         }
     }
+
+
 
     const token = 'xZpKoSPd2lxvjHa2OY9UT0kBT6StaY0c7pnbhNF1RPCPKAexPRuo2P8x8KKICtO3';
 
@@ -76,6 +172,7 @@ function App() {
 
         <section className={s.map}>
             <h2>Куда сдать?</h2>
+
             <div className={s.buttonsWrapper}>
                 {buttons.map((b, i) => <Button
                     key = {i}

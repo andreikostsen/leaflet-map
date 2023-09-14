@@ -1,7 +1,27 @@
 import {filterType} from "../App";
 
-export const waste:Array<filterType> = ["пластик", "бумага", "стекло", "крупногабаритные отходы", "опасные отходы", "металл"]
+export const waste:Array<filterType> = ['все', 'пластик', 'бумага', 'стекло', 'электронная и бытовая техника', 'крупногабаритные отходы', 'опасные отходы', 'металл', 'ветошь', 'вторая жизнь']
 
+
+export type ButtonObjType = {
+    id: string,
+    wasteTitle: filterType,
+    isActive: boolean
+}
+
+
+export const buttons:Array<ButtonObjType> = [
+    { id:'all', wasteTitle: waste[0], isActive: true },
+    { id:'plastic', wasteTitle: waste[1], isActive: true },
+    { id:'paper', wasteTitle: waste[2], isActive: true },
+    { id:'glass', wasteTitle:  waste[3], isActive: true },
+    { id:'electronics', wasteTitle:  waste[4], isActive: true },
+    { id:'largeSize', wasteTitle:  waste[5], isActive: true },
+    { id:'dangerous', wasteTitle:  waste[6], isActive: true },
+    { id:'metal', wasteTitle:  waste[7], isActive: true },
+    { id:'rag', wasteTitle:  waste[8], isActive: true },
+    { id:'secondLife', wasteTitle:  waste[9], isActive: true }
+]
 
 export type MarkerType = {
     id: number,
@@ -935,19 +955,3 @@ export const markers: Array<MarkerType> = [
 
 ];
 
-
-export type ButtonObjType = {
-    id: number,
-    wasteTitle: filterType,
-    isActive: boolean
-}
-
-
-export const buttons:Array<ButtonObjType> = [
-    {id: 1, wasteTitle: waste[0], isActive: true},
-    {id: 2, wasteTitle: waste[1], isActive: false},
-    {id: 3, wasteTitle:  waste[2], isActive: true},
-    {id: 4, wasteTitle:  waste[3], isActive: true},
-    {id: 5, wasteTitle:  waste[4], isActive: true},
-    {id: 6, wasteTitle:  waste[5], isActive: false},
-]
