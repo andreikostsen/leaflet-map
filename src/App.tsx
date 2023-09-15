@@ -102,6 +102,8 @@ function App() {
     }, [])
 
 
+    let buttonsStatusArray: Array<boolean> = []
+
     const [buttonsStatus, setButtonsStatus] = useState<Array<ButtonObjType>>(buttons)
 
     const changeButtonStatus = (wasteType: filterType) => {
@@ -123,19 +125,31 @@ function App() {
 
             buttons.map(b => b.isActive = true)
 
-        } else if (wasteType !== "все"
-            && buttons[1].isActive
-            && buttons[2].isActive
-            && buttons[3].isActive
-            && buttons[4].isActive
-            && buttons[5].isActive
-            && buttons[6].isActive
-            && buttons[7].isActive
-            && buttons[8].isActive
-            && buttons[9].isActive
-        ) {
-            buttons[0].isActive = true
         }
+
+        // else if (wasteType !== "все"
+        //     && buttons[1].isActive
+        //     && buttons[2].isActive
+        //     && buttons[3].isActive
+        //     && buttons[4].isActive
+        //     && buttons[5].isActive
+        //     && buttons[6].isActive
+        //     && buttons[7].isActive
+        //     && buttons[8].isActive
+        //     && buttons[9].isActive
+        // ) {
+        //     buttons[0].isActive = true
+        // }
+
+
+
+        else if (wasteType !== "все")
+        { console.log(buttons.map(b=>buttonsStatusArray.push(b.isActive)))
+
+            console.log(buttonsStatusArray)
+
+        }
+
 
 
         setButtonsStatus({...buttonsStatus})
@@ -143,6 +157,8 @@ function App() {
 
 
     }
+
+
 
     const customIcon = new L.Icon({
         iconUrl: pointIcon,
