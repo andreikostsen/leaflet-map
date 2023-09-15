@@ -102,44 +102,42 @@ function App() {
     }, [])
 
 
-
     const [buttonsStatus, setButtonsStatus] = useState<Array<ButtonObjType>>(buttons)
 
     const changeButtonStatus = (wasteType: filterType) => {
 
         console.log(wasteType)
-        if(wasteType==="все") {
+        if (wasteType === "все") {
             buttons[0].isActive = !buttons[0].isActive
-        } else  {
+        } else {
             buttons[0].isActive = false
         }
 
-
-
         buttons.map(b => b.wasteTitle === wasteType ? b.isActive = !b.isActive : b)
 
+        if (wasteType === "все" && buttons[0].isActive) {
 
+            buttons.map(b => b.isActive = false)
 
-        if(wasteType==="все" && buttons[0].isActive) {
+        } else if (wasteType === "все" && buttons[0].isActive === false) {
 
-            buttons.map(b=> b.isActive = false)
+            buttons.map(b => b.isActive = true)
 
-        } else if (wasteType==="все" && buttons[0].isActive === false) {
-
-            buttons.map(b=> b.isActive = true)
-
+        } else if (wasteType !== "все"
+            && buttons[1].isActive
+            && buttons[2].isActive
+            && buttons[3].isActive
+            && buttons[4].isActive
+            && buttons[5].isActive
+            && buttons[6].isActive
+            && buttons[7].isActive
+            && buttons[8].isActive
+            && buttons[9].isActive
+        ) {
+            buttons[0].isActive = true
         }
 
-        // if(buttons[0].isActive === true) {
-        //
-        //     buttons.map(b=> b.isActive = true)
-        //     setButtonsStatus({...buttonsStatus})
-        // } else  {
-        //     buttons.map(b=> b.isActive = false)
-        //     setButtonsStatus({...buttonsStatus})
-        //
-        // }
-        //
+
         setButtonsStatus({...buttonsStatus})
 
 
