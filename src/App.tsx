@@ -90,6 +90,7 @@ type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, A
 const useAppDispatch = () => useDispatch<AppDispatch>()
 const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
+// Component
 
 function App() {
 
@@ -102,7 +103,6 @@ function App() {
     }, [])
 
 
-    let buttonsStatusArray: Array<boolean> = []
 
     const [buttonsStatus, setButtonsStatus] = useState<Array<ButtonObjType>>(buttons)
 
@@ -127,34 +127,20 @@ function App() {
 
         }
 
-        // else if (wasteType !== "все"
-        //     && buttons[1].isActive
-        //     && buttons[2].isActive
-        //     && buttons[3].isActive
-        //     && buttons[4].isActive
-        //     && buttons[5].isActive
-        //     && buttons[6].isActive
-        //     && buttons[7].isActive
-        //     && buttons[8].isActive
-        //     && buttons[9].isActive
-        // ) {
-        //     buttons[0].isActive = true
-        // }
+         else if (wasteType !== "все") {
 
-
-
-        else if (wasteType !== "все")
-        { console.log(buttons.map(b=>buttonsStatusArray.push(b.isActive)))
-
-            console.log(buttonsStatusArray)
+           let buttonsStatusArray: Array<boolean> = []
+           buttons.map(b => buttonsStatusArray.push(b.isActive))
+           buttonsStatusArray.shift()
+           if(!buttonsStatusArray.includes(false)) {
+                buttons[0].isActive = true
+            }
 
         }
 
+        // setButtonsStatus({...buttonsStatus})
 
-
-        setButtonsStatus({...buttonsStatus})
-
-
+        setButtonsStatus([...buttonsStatus])
 
     }
 
